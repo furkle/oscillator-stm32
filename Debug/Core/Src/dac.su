@@ -1,0 +1,2 @@
+dac.c:19:6:render_wave	32	static
+dac.c:44:6:render_pulse	24	static
