@@ -102,10 +102,10 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* hadc)
     /**ADC1 GPIO Configuration
     PA0     ------> ADC1_IN1
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_0;
+    GPIO_InitStruct.Pin = CV_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    HAL_GPIO_Init(CV_GPIO_Port, &GPIO_InitStruct);
 
     /* ADC1 interrupt Init */
     HAL_NVIC_SetPriority(ADC1_2_IRQn, 1, 0);
@@ -136,13 +136,75 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* hadc)
     /**ADC1 GPIO Configuration
     PA0     ------> ADC1_IN1
     */
-    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_0);
+    HAL_GPIO_DeInit(CV_GPIO_Port, CV_Pin);
 
     /* ADC1 interrupt DeInit */
     HAL_NVIC_DisableIRQ(ADC1_2_IRQn);
   /* USER CODE BEGIN ADC1_MspDeInit 1 */
 
   /* USER CODE END ADC1_MspDeInit 1 */
+  }
+
+}
+
+/**
+* @brief COMP MSP Initialization
+* This function configures the hardware resources used in this example
+* @param hcomp: COMP handle pointer
+* @retval None
+*/
+void HAL_COMP_MspInit(COMP_HandleTypeDef* hcomp)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+  if(hcomp->Instance==COMP1)
+  {
+  /* USER CODE BEGIN COMP1_MspInit 0 */
+
+  /* USER CODE END COMP1_MspInit 0 */
+
+    __HAL_RCC_GPIOA_CLK_ENABLE();
+    /**COMP1 GPIO Configuration
+    PA1     ------> COMP1_INP
+    */
+    GPIO_InitStruct.Pin = GPIO_PIN_1;
+    GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
+    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+    /* COMP1 interrupt Init */
+    HAL_NVIC_SetPriority(COMP1_2_3_IRQn, 0, 0);
+    HAL_NVIC_EnableIRQ(COMP1_2_3_IRQn);
+  /* USER CODE BEGIN COMP1_MspInit 1 */
+
+  /* USER CODE END COMP1_MspInit 1 */
+  }
+
+}
+
+/**
+* @brief COMP MSP De-Initialization
+* This function freeze the hardware resources used in this example
+* @param hcomp: COMP handle pointer
+* @retval None
+*/
+void HAL_COMP_MspDeInit(COMP_HandleTypeDef* hcomp)
+{
+  if(hcomp->Instance==COMP1)
+  {
+  /* USER CODE BEGIN COMP1_MspDeInit 0 */
+
+  /* USER CODE END COMP1_MspDeInit 0 */
+
+    /**COMP1 GPIO Configuration
+    PA1     ------> COMP1_INP
+    */
+    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_1);
+
+    /* COMP1 interrupt DeInit */
+    HAL_NVIC_DisableIRQ(COMP1_2_3_IRQn);
+  /* USER CODE BEGIN COMP1_MspDeInit 1 */
+
+  /* USER CODE END COMP1_MspDeInit 1 */
   }
 
 }
@@ -169,7 +231,7 @@ void HAL_DAC_MspInit(DAC_HandleTypeDef* hdac)
     PA4     ------> DAC1_OUT1
     PA5     ------> DAC1_OUT2
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_4|GPIO_PIN_5;
+    GPIO_InitStruct.Pin = Osc__1_Pin|Osc__2_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
@@ -201,7 +263,7 @@ void HAL_DAC_MspDeInit(DAC_HandleTypeDef* hdac)
     PA4     ------> DAC1_OUT1
     PA5     ------> DAC1_OUT2
     */
-    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_4|GPIO_PIN_5);
+    HAL_GPIO_DeInit(GPIOA, Osc__1_Pin|Osc__2_Pin);
 
   /* USER CODE BEGIN DAC1_MspDeInit 1 */
 

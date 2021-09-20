@@ -8,6 +8,7 @@ C_SRCS += \
 ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.c \
 ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.c \
 ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc_ex.c \
+../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_comp.c \
 ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.c \
 ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dac.c \
 ../Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dac_ex.c \
@@ -32,6 +33,7 @@ OBJS += \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.o \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.o \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc_ex.o \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_comp.o \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.o \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dac.o \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dac_ex.o \
@@ -56,6 +58,7 @@ C_DEPS += \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal.d \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc.d \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_adc_ex.d \
+./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_comp.d \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_cortex.d \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dac.d \
 ./Drivers/STM32G4xx_HAL_Driver/Src/stm32g4xx_hal_dac_ex.d \

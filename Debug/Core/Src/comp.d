@@ -1,4 +1,4 @@
-Core/Src/sine_lut.o: ../Core/Src/sine_lut.c ../Core/Inc/main.h \
+Core/Src/comp.o: ../Core/Src/comp.c ../Core/Inc/comp.h ../Core/Inc/main.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal.h \
  ../Core/Inc/stm32g4xx_hal_conf.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_rcc.h \
@@ -34,7 +34,10 @@ Core/Src/sine_lut.o: ../Core/Src/sine_lut.c ../Core/Inc/main.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim_ex.h \
  ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h \
- ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h
+ ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h \
+ ../Core/Inc/dac.h ../Core/Inc/dac.h
+
+../Core/Inc/comp.h:
 
 ../Core/Inc/main.h:
 
@@ -109,3 +112,7 @@ Core/Src/sine_lut.o: ../Core/Src/sine_lut.c ../Core/Inc/main.h \
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart.h:
 
 ../Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_uart_ex.h:
+
+../Core/Inc/dac.h:
+
+../Core/Inc/dac.h:

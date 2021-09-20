@@ -6,6 +6,7 @@
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
 ../Core/Src/adc.c \
+../Core/Src/comp.c \
 ../Core/Src/dac.c \
 ../Core/Src/main.c \
 ../Core/Src/sine_lut.c \
@@ -18,6 +19,7 @@ C_SRCS += \
 
 OBJS += \
 ./Core/Src/adc.o \
+./Core/Src/comp.o \
 ./Core/Src/dac.o \
 ./Core/Src/main.o \
 ./Core/Src/sine_lut.o \
@@ -30,6 +32,7 @@ OBJS += \
 
 C_DEPS += \
 ./Core/Src/adc.d \
+./Core/Src/comp.d \
 ./Core/Src/dac.d \
 ./Core/Src/main.d \
 ./Core/Src/sine_lut.d \

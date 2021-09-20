@@ -1,2 +1,3 @@
-dac.c:18:6:render_wave	32	static
-dac.c:43:6:render_pulse	24	static
+dac.c:21:6:render_waves	8	static
+dac.c:32:6:render_wave	40	static
+dac.c:52:6:render_pulse	24	static

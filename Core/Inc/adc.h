@@ -12,8 +12,8 @@
 
 extern ADC_HandleTypeDef hadc1;
 
-extern float dac_value;
-extern float dac_delta;
+extern float dac_phase_increment;
+extern float dac_phase_delta;
 extern float pulse_width;
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc);
