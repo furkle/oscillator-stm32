@@ -10,11 +10,10 @@
 
 #include "main.h"
 
-#define SAMPLE_RATE 48000
-#define DAC_OUTPUT_MAX 4095
+#define SAMPLE_RATE 48000.0f
+#define DAC_OUTPUT_MAX 4095.0f
 
 typedef enum WaveType {
-	Pulse_Wave,
 	Triangle_Wave,
 	Sawtooth_Up_Wave,
 	Sawtooth_Down_Wave,
@@ -28,7 +27,6 @@ extern DAC_HandleTypeDef hdac1;
 
 WaveType dac1_wave_type;
 WaveType dac2_wave_type;
-WaveType gpio_wave_type;
 
 float dac_value;
 float dac_delta;

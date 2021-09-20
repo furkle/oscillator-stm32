@@ -11,12 +11,10 @@
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
 	if (hadc->Instance == ADC1) {
-		float note_number = HAL_ADC_GetValue(hadc) / 32;
-		float target_frequency = 440 * pow(2, (note_number - 69) / 12);
-		float delta = (DAC_OUTPUT_MAX + 1) * target_frequency / SAMPLE_RATE / 2;
-		dac_delta = delta;
-		HAL_ADC_Start_IT(&hadc1);
+		float note_number = (float)HAL_ADC_GetValue(hadc) / 32.0f;
+		float target_frequency = 440.0f * pow(2.0f, (note_number - 69.0f) / 12.0f);
+		dac_delta = (DAC_OUTPUT_MAX + 1) * target_frequency / SAMPLE_RATE / 4.0f;
 	} else if (hadc->Instance == ADC2) {
-		pulse_width = HAL_ADC_GetValue(hadc) / DAC_OUTPUT_MAX;
+		// pulse_width = HAL_ADC_GetValue(hadc) / DAC_OUTPUT_MAX;
 	}
 }
