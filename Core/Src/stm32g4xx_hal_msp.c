@@ -166,10 +166,10 @@ void HAL_COMP_MspInit(COMP_HandleTypeDef* hcomp)
     /**COMP1 GPIO Configuration
     PA1     ------> COMP1_INP
     */
-    GPIO_InitStruct.Pin = GPIO_PIN_1;
+    GPIO_InitStruct.Pin = Sync_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+    HAL_GPIO_Init(Sync_GPIO_Port, &GPIO_InitStruct);
 
     /* COMP1 interrupt Init */
     HAL_NVIC_SetPriority(COMP1_2_3_IRQn, 0, 0);
@@ -198,7 +198,7 @@ void HAL_COMP_MspDeInit(COMP_HandleTypeDef* hcomp)
     /**COMP1 GPIO Configuration
     PA1     ------> COMP1_INP
     */
-    HAL_GPIO_DeInit(GPIOA, GPIO_PIN_1);
+    HAL_GPIO_DeInit(Sync_GPIO_Port, Sync_Pin);
 
     /* COMP1 interrupt DeInit */
     HAL_NVIC_DisableIRQ(COMP1_2_3_IRQn);

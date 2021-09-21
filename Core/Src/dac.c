@@ -11,7 +11,6 @@
 
 WaveType dac1_wave_type = Triangle_Wave;
 WaveType dac2_wave_type = Sawtooth_Down_Wave;
-SyncType sync_type = Hard_Sync_Both;
 
 // Start at the "zero" crossing point, rather than the bottom.
 float dac_phase_increment = (DAC_OUTPUT_MAX + 1.0f) / 2.0f;

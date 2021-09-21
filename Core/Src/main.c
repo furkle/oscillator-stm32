@@ -108,10 +108,11 @@ int main(void)
   MX_TIM16_Init();
   MX_COMP1_Init();
   /* USER CODE BEGIN 2 */
+  HAL_ADCEx_Calibration_Start(&hadc1, ADC_SINGLE_ENDED);
   HAL_ADC_Start_IT(&hadc1);
   // HAL_ADC_Start_IT(&hadc2);
 
-  // HAL_COMP_Start(&hcomp1);
+  HAL_COMP_Start(&hcomp1);
 
   HAL_TIM_Base_Start_IT(&htim16);
   HAL_DAC_Start(&hdac1, DAC_CHANNEL_1);
@@ -268,7 +269,7 @@ static void MX_COMP1_Init(void)
   hcomp1.Init.InputPlus = COMP_INPUT_PLUS_IO1;
   hcomp1.Init.InputMinus = COMP_INPUT_MINUS_1_2VREFINT;
   hcomp1.Init.OutputPol = COMP_OUTPUTPOL_NONINVERTED;
-  hcomp1.Init.Hysteresis = COMP_HYSTERESIS_NONE;
+  hcomp1.Init.Hysteresis = COMP_HYSTERESIS_HIGH;
   hcomp1.Init.BlankingSrce = COMP_BLANKINGSRC_NONE;
   hcomp1.Init.TriggerMode = COMP_TRIGGERMODE_IT_RISING_FALLING;
   if (HAL_COMP_Init(&hcomp1) != HAL_OK)

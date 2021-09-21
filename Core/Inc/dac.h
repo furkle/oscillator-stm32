@@ -37,7 +37,6 @@ extern DAC_HandleTypeDef hdac1;
 
 WaveType dac1_wave_type;
 WaveType dac2_wave_type;
-SyncType sync_type;
 
 float dac_phase_increment;
 float dac_phase_delta;
