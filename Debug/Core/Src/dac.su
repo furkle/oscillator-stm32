@@ -1,5 +1,5 @@
 dac.c:22:6:render_waves	8	static
 dac.c:34:7:poly_blep	24	static
 dac.c:51:6:render_wave	32	static
-dac.c:109:6:render_pulse	16	static
-dac.c:126:7:fast_sine	48	static
+dac.c:108:6:render_pulse	16	static
+dac.c:125:7:fast_sine	48	static

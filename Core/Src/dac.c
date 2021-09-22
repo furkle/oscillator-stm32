@@ -68,7 +68,7 @@ void render_wave(DAC_HandleTypeDef* dac, uint8_t channel, WaveType wave_type) {
 			break;
 
 		case Pulse_Wave:
-			if (waveform_phase <= PI) {
+			if (waveform_phase <= twoPI * pulse_width) {
 				value = 1.0f;
 			} else {
 				value = -1.0f;
@@ -76,6 +76,8 @@ void render_wave(DAC_HandleTypeDef* dac, uint8_t channel, WaveType wave_type) {
 
 	        value += poly_blep(t);
 	        value -= poly_blep(fmod(t + 0.5f, 1.0f));
+	        break;
+
 		case Triangle_Wave:
 			if (waveform_phase <= PI) {
 				value = 1.0f;
@@ -89,11 +91,8 @@ void render_wave(DAC_HandleTypeDef* dac, uint8_t channel, WaveType wave_type) {
 			// Leaky integrator: y[n] = A * x[n] + (1 - A) * y[n-1]
 			value = phase_delta * value + (1.0f - phase_delta) * last_output;
 			last_output = value;
-
 			break;
 	}
-
-	last_output = value;
 
 	// Normalize above zero and then scale to fit the 12-bit ADC space.
 	float dac_value = round((value + 1.0f) * ((DAC_OUTPUT_MAX + 1.0f) / 2));

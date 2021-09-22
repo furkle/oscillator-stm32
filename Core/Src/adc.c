@@ -23,9 +23,9 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc) {
 		phase_delta = target_frequency * twoPI / SAMPLE_RATE; // (DAC_OUTPUT_MAX + 1.0f) * target_frequency / SAMPLE_RATE;
 	} else if (hadc->Instance == ADC2) {
 		pulse_width = (float)HAL_ADC_GetValue(hadc) / DAC_OUTPUT_MAX;
-		if (pulse_width < 0.025f) {
+		if (pulse_width < 0.0125f) {
 			pulse_width = 0.0f;
-		} else if (pulse_width > 0.975f) {
+		} else if (pulse_width > 0.9875f) {
 			pulse_width = 1.0f;
 		}
 	}
