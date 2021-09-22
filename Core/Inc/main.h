@@ -72,8 +72,8 @@ void Error_Handler(void);
 #define Osc__2_GPIO_Port GPIOA
 #define Square_Osc_Pin GPIO_PIN_6
 #define Square_Osc_GPIO_Port GPIOA
-#define Gate_Pin GPIO_PIN_8
-#define Gate_GPIO_Port GPIOA
+#define PWM_Pin GPIO_PIN_7
+#define PWM_GPIO_Port GPIOA
 #define T_SWDIO_Pin GPIO_PIN_13
 #define T_SWDIO_GPIO_Port GPIOA
 #define T_SWCLK_Pin GPIO_PIN_14

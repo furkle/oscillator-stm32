@@ -9,13 +9,16 @@
 #define INC_ADC_H_
 
 #include "main.h"
+#include "dac.h"
+
+const float PI;
 
 extern ADC_HandleTypeDef hadc1;
 
-extern float dac_phase_increment;
-extern float dac_phase_delta;
-extern float pulse_width;
+float last_note_number;
+float note_number;
 
 void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef* hadc);
+void generate_buffer(uint16_t num_frames);
 
 #endif /* INC_ADC_H_ */

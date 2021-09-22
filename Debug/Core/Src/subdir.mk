@@ -9,7 +9,6 @@ C_SRCS += \
 ../Core/Src/comp.c \
 ../Core/Src/dac.c \
 ../Core/Src/main.c \
-../Core/Src/sine_lut.c \
 ../Core/Src/stm32g4xx_hal_msp.c \
 ../Core/Src/stm32g4xx_it.c \
 ../Core/Src/syscalls.c \
@@ -22,7 +21,6 @@ OBJS += \
 ./Core/Src/comp.o \
 ./Core/Src/dac.o \
 ./Core/Src/main.o \
-./Core/Src/sine_lut.o \
 ./Core/Src/stm32g4xx_hal_msp.o \
 ./Core/Src/stm32g4xx_it.o \
 ./Core/Src/syscalls.o \
@@ -35,7 +33,6 @@ C_DEPS += \
 ./Core/Src/comp.d \
 ./Core/Src/dac.d \
 ./Core/Src/main.d \
-./Core/Src/sine_lut.d \
 ./Core/Src/stm32g4xx_hal_msp.d \
 ./Core/Src/stm32g4xx_it.d \
 ./Core/Src/syscalls.d \

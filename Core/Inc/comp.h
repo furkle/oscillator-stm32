@@ -9,13 +9,12 @@
 #define INC_COMP_H_
 
 #include "main.h"
-#include "dac.h"
+#include "adc.h"
 
 void HAL_COMP_TriggerCallback(COMP_HandleTypeDef *hcomp);
-void hard_sync(float *phase_inc);
-void soft_sync(float* phase_inc);
+void hard_sync();
+void soft_sync();
 
 SyncType sync_type;
-extern float dac_phase_increment;
 
 #endif /* INC_COMP_H_ */

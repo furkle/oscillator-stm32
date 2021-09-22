@@ -2,7 +2,6 @@
 "./Core/Src/comp.o"
 "./Core/Src/dac.o"
 "./Core/Src/main.o"
-"./Core/Src/sine_lut.o"
 "./Core/Src/stm32g4xx_hal_msp.o"
 "./Core/Src/stm32g4xx_it.o"
 "./Core/Src/syscalls.o"
